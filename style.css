@@ -1,0 +1,186 @@
+/* Reset */
+*{margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth;}
+
+/* Body */
+body{
+  font-family:Arial;
+  min-height:100vh;
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* Floating Glow */
+body::before{
+  content:"";
+  position:fixed;
+  width:500px; height:500px;
+  background:radial-gradient(circle,#ffffff22,transparent);
+  top:-100px; left:-100px;
+  filter:blur(150px);
+  opacity:0.3;
+  animation:floatGlow 10s infinite alternate;
+}
+@keyframes floatGlow{
+  0%{transform:translate(0,0);}
+  100%{transform:translate(200px,200px);}
+}
+
+/* Container */
+.container{max-width:800px; margin:0 auto;}
+
+/* Card */
+.card{
+  background:rgba(50,50,50,0.85);
+  backdrop-filter:blur(8px);
+  padding:30px;
+  margin:20px auto;
+  border-radius:20px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.6);
+  transition:0.3s;
+}
+.card:hover{transform:translateY(-5px);}
+
+/* Profile Image – Bigger */
+.profile{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  border:2px solid #fff;
+  margin-bottom:10px;
+  transition:0.4s;
+}
+.profile:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px #fff;
+}
+
+/* Username Input – Bigger */
+input#username{
+  width:90%;
+  padding:15px 20px;
+  font-size:18px;
+  border-radius:12px;
+  margin:15px 0;
+  border:none;
+}
+
+/* Buttons */
+button{
+  padding:10px 20px;
+  margin:10px;
+  border:none;
+  border-radius:8px;
+  background:#111;
+  color:#fff;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* Button hover bounce */
+button:hover{
+  transform:scale(1.1);
+  background:#fff;
+  color:#000;
+  box-shadow:0 0 15px #fff,0 0 30px #fff;
+  animation:buttonBounce 0.3s forwards;
+}
+@keyframes buttonBounce{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+/* Active button highlight */
+button.activeBtn{
+  background:#fff;
+  color:#000;
+  box-shadow:0 0 20px #fff, 0 0 35px #fff;
+}
+
+/* Hero Text */
+#heroText{
+  font-weight:500;
+  font-size:20px;
+  margin-top:10px;
+  color:#fff;
+}
+#cursor{font-weight:bold; color:#fff;}
+
+/* Content Section */
+.section{margin-top:10px;}
+
+/* Section Titles */
+h2{
+  margin-bottom:15px;
+  position:relative;
+}
+h2::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background:#fff;
+  margin:8px auto;
+  border-radius:2px;
+}
+
+/* Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:10px;
+}
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+  filter:brightness(0.9);
+}
+.gallery img:hover{transform:scale(1.05); filter:brightness(1);}
+
+/* Lightbox */
+#lightbox{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+#lightbox img{max-width:80%; border-radius:10px;}
+
+/* Socials */
+.socials i{
+  font-size:28px;
+  margin:10px;
+  transition:0.3s;
+  color:#fff;
+}
+.socials i:hover{
+  transform:translateY(-5px) scale(1.2);
+  color:#aaa;
+}
+
+/* Hidden class */
+.hidden{display:none;}
+
+/* Reveal animation */
+.reveal{opacity:0; transform:translateY(30px); transition:1s;}
+.reveal.active{opacity:1; transform:translateY(0);}
+
+/* Slide/Fade Animation for Main Page */
+#mainPage{
+  opacity:0;
+  transform:translateY(50px);
+  transition:opacity 1s ease, transform 1s ease;
+}
+#mainPage.show{
+  opacity:1;
+  transform:translateY(0);
+}

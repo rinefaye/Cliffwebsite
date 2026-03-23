@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<div class="container">
+
+  <!-- LOGIN -->
+  <div id="loginPage" class="card">
+    <img src="c:\Users\ASUS\OneDrive\Desktop\Cliff_folder\Website\Cliff.jpg" class="profile">
+    <h1>Welcome</h1>
+    <input type="text" id="username" placeholder="Enter your username" onkeypress="handleEnter(event)">
+    <button onclick="proceed()">Enter Website</button>
+  </div>
+
+  <!-- MAIN WEBSITE -->
+  <div id="mainPage" class="hidden">
+
+    <!-- Welcome Card -->
+    <div class="card reveal">
+      <img src="c:\Users\ASUS\OneDrive\Desktop\Cliff_folder\Website\Cliff.jpg" class="profile">
+      <h1 id="welcomeText"></h1>
+      <h2 id="heroText"></h2>
+    </div>
+
+    <!-- Profile / Hobbies / About Me Buttons -->
+    <div class="card buttons reveal">
+      <button onclick="showProfile(); setActiveButton(this)">Profile</button>
+      <button onclick="showHobbies(); setActiveButton(this)">Hobbies</button>
+      <button onclick="showAbout(); setActiveButton(this)">About Me</button>
+    </div>
+
+    <!-- Content Section -->
+    <div id="content" class="card section reveal">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- Gallery -->
+    <div id="gallery" class="card section reveal">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="https://picsum.photos/300?1">
+        <img src="https://picsum.photos/300?2">
+        <img src="https://picsum.photos/300?3">
+        <img src="https://picsum.photos/300?4">
+      </div>
+    </div>
+
+    <!-- Socials -->
+    <div class="card socials reveal">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+  </div>
+</div>
+
+<div id="lightbox">
+  <img id="lightboxImg">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
